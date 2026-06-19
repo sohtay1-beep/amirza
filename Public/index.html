@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>آمیرزای آنلاین</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="screen-home" class="screen">
+    <div class="hero">
+      <h1 class="title">آمیرزای <span>آنلاین</span></h1>
+      <p class="subtitle">حروف رو بگیر، کلمه بساز، با هم پیش برید</p>
+    </div>
+
+    <div class="card">
+      <label>اسمت چیه؟</label>
+      <input id="nameInput" type="text" placeholder="مثلاً علی" maxlength="20" />
+
+      <button id="createBtn" class="btn btn-primary">ساخت اتاق جدید</button>
+
+      <div class="divider"><span>یا</span></div>
+
+      <label>کد اتاق دوستت</label>
+      <input id="codeInput" type="text" placeholder="مثلاً A7K2" maxlength="4" style="text-transform:uppercase" />
+      <button id="joinBtn" class="btn btn-secondary">ورود به اتاق</button>
+
+      <p id="errorMsg" class="error-msg"></p>
+    </div>
+  </div>
+
+  <div id="screen-game" class="screen hidden">
+    <div class="top-bar">
+      <div class="room-code">کد اتاق: <strong id="roomCodeLabel">----</strong></div>
+      <button id="shareBtn" class="btn-ghost">اشتراک‌گذاری</button>
+    </div>
+
+    <div class="letters-board" id="lettersBoard"></div>
+
+    <div class="slots-list" id="slotsList"></div>
+
+    <form id="wordForm" class="word-form">
+      <input id="wordInput" type="text" placeholder="کلمه‌ت رو اینجا بنویس..." autocomplete="off" />
+      <button type="submit" class="btn btn-primary">ثبت</button>
+    </form>
+    <p id="feedback" class="feedback"></p>
+
+    <div class="scoreboard" id="scoreboard"></div>
+
+    <div id="logFeed" class="log-feed"></div>
+
+    <button id="newRoundBtn" class="btn btn-secondary hidden">دور بعدی</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
